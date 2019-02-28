@@ -14,6 +14,7 @@ export class JobsService {
     return this.http.get<Job[]>(this.userUrl + 'jobs');
   }
   jobsFilter(search: {keywords: string, location: string}): Observable<Job[]> {
+    console.log('service');
     console.log(search.keywords);
     console.log(search.location);
     return this.http.get<Job[]>(this.userUrl + 'jobs/search?key=' + search.keywords + '&location=' + search.location);

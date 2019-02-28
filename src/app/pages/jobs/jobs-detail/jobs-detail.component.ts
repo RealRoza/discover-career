@@ -56,9 +56,11 @@ export class JobsDetailComponent implements OnInit {
       }
     );
   }
-  openDialog() {
-    const dialogRef = this.dialog.open(ApplyJobComponent);
-
+  openDialog(id: number) {
+    const dialogRef = this.dialog.open(ApplyJobComponent,
+      {
+        data: { data: 'hello'}
+      });
     // dialogRef.afterClosed().subscribe(result => {
     //   console.log(`Dialog result: ${result}`);
     // });

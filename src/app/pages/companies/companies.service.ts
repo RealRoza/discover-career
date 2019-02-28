@@ -18,6 +18,6 @@ export class CompaniesService {
     return this.http.get<Company>(this.userUrl + 'company/' + id);
   }
   companyFilter(key: string, location: string): Observable<Company[]> {
-    return this.http.get<Company[]>(this.userUrl + 'company/search?key=' + key + '&location' + location);
+    return this.http.get<Company[]>(this.userUrl + 'company/search?key=' + key + '&location=' + location);
   }
 }

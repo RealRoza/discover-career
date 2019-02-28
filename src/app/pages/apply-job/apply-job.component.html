@@ -1,19 +1,23 @@
 <div fxLayout="column">
   <h2 mat-dialog-title>Apply Job</h2>
   <mat-dialog-content>
-    <form fxLayout="column">
+    <form #form="ngForm" fxLayout="column" (ngSubmit)="onSubmit(form)">
       <mat-form-field appearance="outline">
         <mat-label>Email Address</mat-label>
-        <input type="text" matInput placeholder="Email Address">
+        <input type="email" ngModel name="email" matInput placeholder="Email Address">
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Message</mat-label>
-        <textarea matInput rows="10" placeholder="Your cover letter/message sent to the employer."></textarea>
+        <textarea matInput ngModel name="message" rows="10" placeholder="Your cover letter/message sent to the employer."></textarea>
       </mat-form-field>
+      <div fxLayout="row" fxLayoutGap="10px">
+        <button mat-raised-button type="submit" color="accent" fxFlex="70">
+          SEND APPLICATION
+        </button>
+        <button mat-button mat-dialog-close color="warn" fxFlex>Cancel</button>
+      </div>
     </form>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close color="warn">Cancel</button>
-    <button mat-raised-button [mat-dialog-close]="true" color="accent">SEND APPLICATION</button>
   </mat-dialog-actions>
 </div>

@@ -18,8 +18,6 @@ export class HomeComponent implements OnInit {
     keywords = formObj.value.keywords;
     let location: string;
     location = formObj.value.location;
-    // console.log('key', keywords);
-    // console.log('location', location);
     this.router.navigate(['/jobs'],
       { queryParams: { key: keywords, location: location } });
   }

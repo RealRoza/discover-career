@@ -20,8 +20,11 @@ export class JobsListComponent implements OnInit {
 
   ngOnInit() {
     this.onStart();
-    // this.getJobList();
-
+    if (!this.isSearch(this.keywords, this.location)) {
+      this.getJobList();
+    } else {
+      this.getJobsFilter({keywords: this.keywords, location: this.location});
+    }
   }
   getJobList() {
     this.jobsService.jobList().subscribe(
@@ -45,18 +48,21 @@ export class JobsListComponent implements OnInit {
       (params: Params) => {
         this.keywords = params['key'];
         this.location = params['location'];
-        // let search: {keywords: string, location: string};
-        // search.keywords = this.keywords;
-        // search.location = this.location;
-        this.getJobsFilter({keywords: this.keywords, location: this.location});
-        // console.log('jobs');
-        // console.log('key', this.keywords);
-        // console.log('location', this.location);
+        // if (this.isSearch(this.keywords, this.location)) {
+        //   this.getJobsFilter({keywords: this.keywords, location: this.location});
+        // }
       },
       error1 => {
         console.log(error1.message);
       }
     );
+  }
+  isSearch(key: string, location: string) {
+    if (key == null && location == null) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
 }

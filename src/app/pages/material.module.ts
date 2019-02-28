@@ -30,6 +30,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import {AppRoutingModule} from '../app-routing.module';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MAT_DIALOG_DATA} from '@angular/material';
 // import { MatMomentDateModule, MomentDateAdapter } from "@angular/material-moment-adapter";
 import {FileUploadModule} from 'primeng/fileupload';
 import {MessageService} from 'primeng/api';
@@ -81,7 +82,7 @@ import { ApplyJobComponent } from './apply-job/apply-job.component';
     HttpClientModule,
     AppRoutingModule,
     FileUploadModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   exports: [
     MatButtonModule,

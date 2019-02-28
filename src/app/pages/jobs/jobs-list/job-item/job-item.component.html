@@ -1,0 +1,22 @@
+<a class="item-link" [routerLink]="['/jobs', jobItem.jobId ]">
+  <mat-card fxLayout="row"  class="example-card">
+    <mat-card-header fxFlex="60">
+      <div mat-card-avatar class="header-image">
+        <img class="job-logo" [src]="jobItem.company.photo.url" alt="job-logo">
+      </div>
+      <mat-card-title>{{ jobItem.jobTitle }}</mat-card-title>
+      <mat-card-subtitle>{{ jobItem.description | slice:0:80 }}...</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content fxFlex="40">
+      <div fxFlex="40" fxFlexAlign="center">
+        <span class="location"><i class="fas fa-map-marker-alt"></i> {{ jobItem.location }}</span>
+      </div>
+      <div fxFlex fxLayoutAlign="end center">
+        <div fxFlex="50" fxLayout="column" >
+          <span class="job-type">{{ jobItem.jobType.title }}</span>
+          <span class="date">{{ jobItem.startDate | date }}</span>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</a>

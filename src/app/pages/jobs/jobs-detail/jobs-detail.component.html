@@ -1,0 +1,101 @@
+<div fxLayout="row">
+  <div fxFlex="70" fxLayout="column" class="page-content">
+    <div fxLayout="row" fxFlex="100">
+      <img class="company-logo" fxFlex="10" [src]="photo.url" alt="logo">
+      <div fxFlex="60" fxLayout="column">
+        <h2 class="title">{{ jobDetail.jobTitle }}</h2>
+        <ul class="meta-info">
+          <li class="company"><span>{{ companyDetail.companyName }}</span></li>
+          <li class="company"><span><i class="fas fa-map-marker-alt"></i> {{ companyDetail.companyLocation }}</span></li>
+        </ul>
+        <div class="taxonomy-terms" fxLayout="row" fxFlex>
+          <a href="/#" *ngFor="let cat of jobDetail.jobCategoryDetails">{{ cat.jobCategory.title }}</a>
+          <!--<a href="/#">EDUCATION & TRAINING</a>-->
+        </div>
+      </div>
+    </div>
+    <mat-card class="entry-meta">
+      <h4 class="section-title">Overview</h4>
+      <a href="#" class="meta-link is-visible">
+        <span class="see-more">See all <em class="count">5</em> fields</span>
+        <span class="see-less">See less fields</span>
+      </a>
+      <ul class="meta-fields">
+        <li class="meta-field salary-meta">
+          <label class="title">Salary:</label>
+          <span class="value">{{ jobDetail.salary }}</span>
+        </li>
+        <li class="meta-field experience-meta">
+          <label class="title">Experience:</label>
+          <span class="value">{{ jobDetail.experience }}</span>
+        </li>
+        <li class="meta-field career-level-meta">
+          <label class="title">CareerLevel:</label>
+          <span class="value">{{ carreerLevel.title }}</span>
+        </li>
+        <li class="meta-field career-level-meta">
+          <label class="title">Qualification:</label>
+          <span class="value">{{ qualification.title }}</span>
+        </li>
+      </ul>
+    </mat-card>
+
+    <div class="entry-description">
+      <h3>Description</h3>
+      <p>{{ jobDetail.description }}</p>
+      <h3>Required Skills</h3>
+      <ul>
+        <li>5+ years of experience with Java</li>
+        <li>Excellent knowledge of Spring (Boot) framework</li>
+        <li>Proficient with JPA/Hibernate</li>
+        <li>At least 1 year of Angular experience</li>
+        <li>Comfortable with PostgreSQL database</li>
+        <li>Fluent English skills</li>
+        <li>Desire to learn and improve over time</li>
+        <li>Good Great sense of humor</li>
+      </ul>
+      <p class="job_tags">Tagged as: <a href="#" rel="tag" class="text-link">Health Insurance</a>, <a href="https://demo.wpscouts.net/capstone/job-tag/share-scheme/" rel="tag" class="text-link">Share Scheme</a>, <a href="https://demo.wpscouts.net/capstone/job-tag/flexible-hours/" rel="tag" class="text-link">Flexible Hours</a></p>
+    </div>
+    <div class="entry-tags">
+      <div class="tags-header">
+        <h3 class="title">Perks &amp; Privilges</h3>
+        <p class="desc">Our company has a lot of cool stuff to offer. We have an awesome start-up culture where everything you do matters! We offer following perks and benefits.</p>
+      </div>
+    </div>
+    <div>
+      <button type="button" mat-raised-button (click)="openDialog()">APPLY NOW</button>
+    </div>
+  </div>
+  <div fxFlex="30">
+    <aside class="page-sidebar">
+      <a routerLink="/jobs" class="back-link">← See all jobs</a>
+      <section class="profile-module">
+        <div class="company-info info">
+          <h4 class="title">Company Profile</h4>
+          <h2 class="company-name name">{{ companyDetail.companyName }}</h2>
+          <p class="company-tagline tagline">{{ companyDetail.tagLine }} for the World</p></div>
+        <div class="company-meta meta-info">
+          <ul class="social-links">
+            <li class="facebook"><a href="https://facebook.com/#" rel="_blank"><i class="fab fa-facebook-f"></i></a></li><li class="twitter"><a href="https://twitter.com/Intuit" rel="_blank"><i class="fab fa-twitter"></i></a></li><li class="website"><a href="https://intuit.com/" rel="_blank"><i class="fas fa-globe-americas"></i></a></li>              </ul>
+          <button mat-raised-button>Visit Profiles</button>
+        </div>
+      </section>
+      <section class="related-entries-module">
+        <h3 class="module-title">Similiar Jobs</h3>
+        <div class="entries-list">
+          <article class="listing-entry">
+            <div class="entry-header">
+              <h4 class="title"><a href="#">Quickbook Trainer</a></h4>
+              <span class="type">(Full Time)</span>
+            </div>
+            <div class="entry-footer">
+              <span class="company">{{ companyDetail.companyName }}</span><span class="category">Category</span>
+            </div>
+          </article>
+        </div>
+        <p class="alt-cta">Looking for a job?  <a href="#">Post a Resume</a></p>
+      </section>
+    </aside>
+  </div>
+</div>
+

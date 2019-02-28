@@ -1,0 +1,45 @@
+<div fxLayout="row" fxFlex="100">
+  <div class="page-left-sidebar" fxLayout="column" fxFlex="30">
+    <div class="form-conent">
+      <h1 class="primary">Search & Filter</h1>
+      <form #form="ngForm" (ngSubmit)="onSubmit(form)" fxLayout="column">
+        <mat-form-field appearance="outline">
+          <mat-label>keywords</mat-label>
+          <input type="text" name="keywords" ngModel matInput placeholder="Enter Keywords">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>locaton</mat-label>
+          <input type="text" name="location" ngModel matInput placeholder="Enter Location">
+        </mat-form-field>
+        <button type="submit" mat-raised-button>SEARCH</button>
+      </form>
+    </div>
+    <div id="jobs-filters-module" class="job_filters_dummy" data-filters-breakpoint="3">
+      <div class="job_filter jobs_types_filter" data-is-passive="">
+        <h4 class="title">Job Type</h4>
+        <ul class="job_types">
+          <li><label for="job_type_freelance_dummy" class="freelance"><input type="checkbox" name="filter_job_type[]" value="freelance" checked="checked" id="job_type_freelance_dummy"><span></span> Freelance</label></li>
+          <li><label for="job_type_full-time_dummy" class="full-time"><input type="checkbox" name="filter_job_type[]" value="full-time" checked="checked" id="job_type_full-time_dummy"><span></span> Full Time</label></li>
+          <li><label for="job_type_internship_dummy" class="internship"><input type="checkbox" name="filter_job_type[]" value="internship" checked="checked" id="job_type_internship_dummy"><span></span> Internship</label></li>
+          <li><label for="job_type_part-time_dummy" class="part-time"><input type="checkbox" name="filter_job_type[]" value="part-time" checked="checked" id="job_type_part-time_dummy"><span></span> Part Time</label></li>
+          <li><label for="job_type_temporary_dummy" class="temporary"><input type="checkbox" name="filter_job_type[]" value="temporary" checked="checked" id="job_type_temporary_dummy"><span></span> Temporary</label></li>
+        </ul>
+      </div>
+      <div class="job_filter job_tags_filter" data-is-passive="">
+        <h4 class="title">Perks &amp; Privilges</h4>
+        <div class="job_tags">
+          <a href="#" class="tag-cloud-link tag-link-30 tag-link-position-1" style="font-size: 22pt;" aria-label="Flexible Hours (11 jobs)">Flexible Hours</a>
+          <a href="#" class="tag-cloud-link tag-link-27 tag-link-position-2" style="font-size: 22pt;" aria-label="Health Insurance (11 jobs)">Health Insurance</a>
+          <a href="#" class="tag-cloud-link tag-link-29 tag-link-position-3" style="font-size: 15pt;" aria-label="Share Scheme (10 jobs)">Share Scheme</a>
+          <a href="#" class="tag-cloud-link tag-link-28 tag-link-position-4" style="font-size: 15pt;" aria-label="Pension Scheme (10 jobs)">Pension Scheme</a>
+          <a href="#" class="tag-cloud-link tag-link-31 tag-link-position-5" style="font-size: 8pt;" aria-label="Company Car (9 jobs)">Company Car</a>			        </div>
+      </div>
+    </div>
+  </div>
+  <!--<mat-divider [vertical]="true"></mat-divider>-->
+  <div class="job-list" fxLayout="column" fxFlex fxLayoutGap="20px">
+    <div *ngFor="let job of jobList">
+      <app-job-item [jobItem]="job"></app-job-item>
+    </div>
+  </div>
+</div>

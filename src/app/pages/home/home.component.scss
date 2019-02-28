@@ -1,0 +1,51 @@
+.home-image {
+  height: 90vh;
+  background: linear-gradient(rgba(39,31,31,0.5), rgba(39,31,31,0.5)),  url(https://demo.wpscouts.net/capstone/wp-content/uploads/sites/4/2018/10/578589ce-hero-bg.jpg);
+  background-size: cover;
+
+}
+.primary {
+  font-family: "Roboto", sans-serif;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -.5px;
+  color: #FFF;
+  margin-left: 10%;
+}
+.secondary {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #f0f0f0;
+  margin-left: 10%;
+}
+.inner {
+  width: 405px;
+  background: rgba(255, 255, 255, .2);
+  border-radius: 5px;
+  padding: 20px;
+  margin: auto auto;
+}
+mat-form-field {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.input-color {
+  background-color: white;
+  border-radius: 5px;
+  padding: 2% 2%;
+}
+button {
+  font-size: 16px;
+  background-color: #59bd59;
+  color: aliceblue;
+}
+.inner button {
+  margin-top: 2%;
+  width: 100%;
+}
+.widget ul{
+  width: 200px;
+}

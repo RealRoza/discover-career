@@ -1,0 +1,231 @@
+<div class="inner-body" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
+  <div class="page-sidebar" fxLayout="column" fxFlex="30">
+
+  </div>
+  <div class="page-content" fxFlex="70">
+    <form fxLayout="column">
+      <div fxLayout="row" fxLayout.xs="column" fxFlex="100">
+        <mat-form-field appearance="outline" fxFlex="50">
+          <mat-label>Your Name</mat-label>
+          <input type="text" matInput placeholder="Your full name" ngModel required
+                 name="fullName">
+          <mat-error>Field must no empty</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex="50">
+          <mat-label>Your Email</mat-label>
+          <input matInput type="email" placeholder="you@yourdomain.com" ngModel name="email" email required
+                 #emailInput="ngModel">
+          <mat-error *ngIf="emailInput.hasError('required')">Field must no empty</mat-error>
+          <mat-error *ngIf="!emailInput.hasError('required')">E-mail is invalid.</mat-error>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayout.xs="column" fxFlex="100">
+        <mat-form-field appearance="outline" fxFlex="50">
+          <mat-label>Professional Title</mat-label>
+          <input type="text" matInput placeholder="eg. Web Developer" ngModel required
+                 name="professional_title">
+          <mat-error>Field must no empty</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex="50">
+          <mat-label>Location</mat-label>
+          <input type="text" matInput placeholder="Your Location" ngModel required
+                 name="location">
+          <mat-error>Field must no empty</mat-error>
+        </mat-form-field>
+
+      </div>
+      <div fxLayout="row" fxLayout.xs="column" fxFlex="100">
+        <h4>photo</h4>
+
+      </div>
+      <div fxLayout="row" fxLayout.xs="column" fxFlex="100">
+        <mat-form-field appearance="outline" fxFlex="100">
+          <mat-label>Video Title</mat-label>
+          <input type="text" matInput placeholder="A link to video about yourself" ngModel
+                 name="video_link">
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayout.xs="column" fxFlex="100">
+        <mat-form-field appearance="outline" fxFlex="50">
+          <mat-label>Resume Category</mat-label>
+          <mat-select placeholder="Choose role" required name="resume_category">
+            <mat-option *ngFor="let category of categorys" [value]="category.id">
+              {{category.value}}
+            </mat-option>
+          </mat-select>
+          <mat-error>Field must no empty</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex="50">
+          <mat-label>Skill</mat-label>
+          <input type="text" matInput placeholder="Comma separate list of relevant skills" ngModel
+                 name="skill">
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayout.xs="column" fxFlex="100">
+        <mat-form-field appearance="outline" fxFlex="100">
+          <mat-label>Biographical Info</mat-label>
+          <textarea rows="5" matInput placeholder="Tell us something about you." ngModel
+                    name="biographicalInfo"
+                    #bioInput="ngModel" maxlength="250"></textarea>
+          <mat-hint align="end">{{bioInput.value?.length}}/250</mat-hint>
+        </mat-form-field>
+      </div>
+      <!--ADD URL-->
+      <div fxLayout="column" fxLayout.xs="column" fxFlex="100" >
+        <div fxFlex="100" fxLayout="column">
+          <mat-label style="margin-bottom: 5px">URL(S)</mat-label>
+          <div class="ui-sortable" [formGroup]="urlsForm" fxFlex="100" fxLayout="column">
+            <div *ngFor="let urlCtr of urlsForm.controls; let i = index" [formGroupName]="i" fxFlex="100" class="form-group"
+                 fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
+              <mat-form-field appearance="outline" fxFlex="40">
+                <mat-label>Name</mat-label>
+                <input type="text" matInput required placeholder="URL title"
+                       formControlName="name">
+                <mat-error>Field must no empty</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline" fxFlex="40">
+                <mat-label>URl</mat-label>
+                <input type="text" matInput required placeholder="Input link"
+                       formControlName="url">
+                <mat-error>Field must no empty</mat-error>
+              </mat-form-field>
+              <div fxFlex="20">
+                <button fxFlex="20"  type="button" style="height: 50px;"
+                        (click)="removeUrl(i)" mat-raised-button color="warn" fxFlex="20"
+                        fxFlexOffset="20" fxFlexOffset.xs="1" fxFlexOffset.sm="1">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div fxFlex="20">
+          <button fxFlex="50" fxFlex.xs="100" fxFill.sm="100" type="button" mat-raised-button color="accent"
+                  fxFlex="20"
+                  (click)="addNewUrl()"> + ADD URL
+          </button>
+        </div>
+      </div>
+
+      <!--ADD Education-->
+      <div fxLayout="column" fxLayout.xs="column" fxFlex="100" style="margin-top: 10px">
+        <div fxFlex="100" fxLayout="column">
+          <mat-label style="margin-bottom: 5px">Education</mat-label>
+          <div class="ui-sortable" [formGroup]="educationForm" fxFlex="100" fxLayout="column">
+            <div *ngFor="let educationCrt of educationForm.controls; let i = index" [formGroupName]="i" fxFlex="100" class="form-group"
+                 fxLayout="column" fxLayout.xs="column" fxLayout.sm="column">
+              <div fxFlex="100" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
+
+                <mat-form-field appearance="outline" fxFlex="50">
+                  <mat-label>School Name</mat-label>
+                  <input type="text" matInput required placeholder=""
+                         formControlName="schoolName">
+                  <mat-error>Field must no empty</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="50">
+                  <mat-label>Qualification</mat-label>
+                  <input type="text" matInput required placeholder=""
+                         formControlName="qualification">
+                  <mat-error>Field must no empty</mat-error>
+                </mat-form-field>
+              </div>
+              <div fxFlex="100" >
+                <mat-form-field appearance="outline" fxFlex="100">
+                  <mat-label>Start/End Date</mat-label>
+                  <input type="text" matInput required placeholder=""
+                         formControlName="date">
+                  <mat-error>Field must no empty</mat-error>
+                </mat-form-field>
+              </div>
+
+              <div fxFlex="100">
+                <mat-form-field appearance="outline" fxFlex="100">
+                  <mat-label>Notes</mat-label>
+                  <textarea rows="3" matInput placeholder=""
+                            name="notes"
+                            maxlength="250"></textarea>
+
+                </mat-form-field>
+              </div>
+              <div fxFlex="20">
+                <button fxFlex="20"  type="button" style="height: 50px;"
+                        (click)="removeEducation(i)" mat-raised-button color="warn" fxFlex="20"
+                        fxFlexOffset="1" >
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div fxFlex="20">
+          <button fxFlex="50" fxFlex.xs="100" fxFill.sm="100" type="button" mat-raised-button color="accent"
+                  fxFlex="20" (click)="addNewEducation()"
+          > + ADD EDUCATION
+          </button>
+        </div>
+      </div>
+
+      <!--ADD Experience-->
+      <div fxLayout="column" fxLayout.xs="column" fxFlex="100" style="margin-top: 10px">
+        <div fxFlex="100" fxLayout="column">
+          <mat-label style="margin-bottom: 5px">Experience</mat-label>
+          <div class="ui-sortable" [formGroup]="experienceForm" fxFlex="100" fxLayout="column">
+            <div *ngFor="let eperCrt of experienceForm.controls; let i = index" [formGroupName]="i" fxFlex="100" class="form-group"
+                 fxLayout="column" fxLayout.xs="column" fxLayout.sm="column">
+              <div fxFlex="100" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
+
+                <mat-form-field appearance="outline" fxFlex="50">
+                  <mat-label>Employer</mat-label>
+                  <input type="text" matInput required placeholder=""
+                         formControlName="employer">
+                  <mat-error>Field must no empty</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="50">
+                  <mat-label>URl</mat-label>
+                  <input type="text" matInput required placeholder=""
+                         formControlName="jobTitle">
+                  <mat-error>Field must no empty</mat-error>
+                </mat-form-field>
+              </div>
+              <div fxFlex="100" >
+                <mat-form-field appearance="outline" fxFlex="100">
+                  <mat-label>Start/End Date</mat-label>
+                  <input type="text" matInput required placeholder=""
+                         formControlName="date">
+                  <mat-error>Field must no empty</mat-error>
+                </mat-form-field>
+              </div>
+
+              <div fxFlex="100">
+                <mat-form-field appearance="outline" fxFlex="100">
+                  <mat-label>Notes</mat-label>
+                  <textarea rows="3" matInput placeholder=""
+                            name="notes"
+                            maxlength="250"></textarea>
+
+                </mat-form-field>
+              </div>
+              <div fxFlex="20">
+                <button fxFlex="20"  type="button" style="height: 50px;"
+                        (click)="removeUrl(i)" mat-raised-button color="warn" fxFlex="20"
+                        fxFlexOffset="1" >
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div fxFlex="20">
+          <button fxFlex="50" fxFlex.xs="100" fxFill.sm="100" type="button" mat-raised-button color="accent"
+                  fxFlex="20" (click)="addNewExperience()"
+          > + ADD EXPERIENCE
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

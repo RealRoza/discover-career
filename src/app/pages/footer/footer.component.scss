@@ -1,0 +1,47 @@
+.title-footer {
+  font-family: "Open Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #3a3a3a;
+  margin-left: 10%;
+}
+p {
+  margin-left: 10%;
+  margin-top: 0;
+  color: grey;
+}
+mat-divider {
+  margin-left: 3%;
+  margin-right: 3%;
+}
+ul li {
+  list-style-type: none;
+  display: inline;
+  margin-right: 15px;
+}
+li a {
+  text-decoration: none;
+  color: grey;
+}
+p a {
+  text-decoration: none;
+  color: red;
+}
+p a:hover {
+  text-decoration: underline;
+}
+li a:hover {
+  color: black;
+}
+mat-icon {
+  margin-top: 5px;
+}
+.fa-facebook-f, .fa-twitter, .fa-instagram {
+  font-size: x-large;
+}
+.copy-right {
+  margin-top: 15px;
+  color: grey;
+}

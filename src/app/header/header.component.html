@@ -1,0 +1,94 @@
+<div class="wrap" fxLayout="row" fxFlex="100" fxFlexAlign="space-around center">
+  <mat-toolbar color="secondary" role="heading">
+    <span class="example-fill-remaining-space"></span>
+    <span><img width="300" height="60"
+               src="https://demo.wpscouts.net/capstone/wp-content/uploads/sites/4/2018/11/827b105a-site-logo@2x.png"></span>
+    <span class="example-fill-remaining-space"></span>
+    <a routerLink="/Home">HOME</a>
+    <span class="example-fill-remaining-space"></span>
+    <div>
+      <button mat-button [matMenuTriggerFor]="explore">EXPOLORES</button>
+      <mat-menu #explore="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="category">Catagory</button>
+        <button mat-menu-item [matMenuTriggerFor]="companies">Companies</button>
+        <button mat-menu-item [matMenuTriggerFor]="tages">Tages</button>
+        <button mat-menu-item [matMenuTriggerFor]="types">Taypes</button>
+      </mat-menu>
+      <mat-menu #category="matMenu">
+        <button mat-menu-item >Human Resource</button>
+        <button mat-menu-item >Design & Architecture</button>
+        <button mat-menu-item >Education & Training</button>
+        <button mat-menu-item >Engineering</button>
+        <button mat-menu-item>Finance & Accounting</button>
+        <button mat-menu-item>Food & Restaurant</button>
+        <button mat-menu-item>Health & Medicine</button>
+        <button mat-menu-item>Legal</button>
+      </mat-menu>
+      <mat-menu #companies="matMenu">
+        <button mat-menu-item>Amazone</button>
+        <button mat-menu-item>Apple</button>
+        <button mat-menu-item>Basecamp</button>
+        <button mat-menu-item>Cloudsmith</button>
+        <button mat-menu-item>Foursquare</button>
+        <button mat-menu-item>Github</button>
+        <button mat-menu-item>Intuit</button>
+        <button mat-menu-item>LinkedIn</button>
+      </mat-menu>
+      <mat-menu #tages="matMenu">
+        <button mat-menu-item>Company Car</button>
+        <button mat-menu-item>Health Insurance</button>
+        <button mat-menu-item>Pension Scheme</button>
+        <button mat-menu-item>Share Scheme</button>
+        <button mat-menu-item>Flexible Hours</button>
+      </mat-menu>
+      <mat-menu #types="matMenu">
+        <button mat-menu-item>Freelance</button>
+        <button mat-menu-item>Full Time</button>
+        <button mat-menu-item>Internship</button>
+        <button mat-menu-item>Part Time</button>
+        <button mat-menu-item>Temporary</button>
+      </mat-menu>
+    </div>
+
+    <span class="example-fill-remaining-space"></span>
+    <div>
+      <button mat-button [matMenuTriggerFor]="candidate">CANDIDTES</button>
+      <mat-menu #candidate="matMenu">
+        <button mat-menu-item>Browse Jobs</button>
+        <button mat-menu-item>Browse Companies</button>
+        <button mat-menu-item>Explore Jobs</button>
+        <button mat-menu-item>Submit Resume</button>
+        <button mat-menu-item>Manage Resumes</button>
+        <button mat-menu-item>Manage Applications</button>
+        <button mat-menu-item>Manage Bookmarks</button>
+        <button mat-menu-item>Manage Alerts</button>
+      </mat-menu>
+    </div>
+    <span class="example-fill-remaining-space"></span>
+    <div>
+      <button mat-button [matMenuTriggerFor]="employers">EMPLOYERS</button>
+      <mat-menu #employers="matMenu">
+        <button mat-menu-item>Find Candidates</button>
+        <button mat-menu-item>Find Candidates</button>
+        <button mat-menu-item>Post A Job</button>
+        <button mat-menu-item>Manage Jobs</button>
+        <button mat-menu-item>Manage Applications</button>
+        <button mat-menu-item>Manage Bookmarks</button>
+        <button mat-menu-item>Manage Alerts</button>
+      </mat-menu>
+    </div>
+    <span class="example-fill-remaining-space"></span>
+    <div>
+      <button mat-button [matMenuTriggerFor]="pages">PAGES</button>
+      <mat-menu #pages="matMenu">
+        <button mat-menu-item>News</button>
+        <button mat-menu-item>Pricing</button>
+        <button mat-menu-item>Contact</button>
+        <button mat-menu-item>Privacy Policy</button>
+        <button mat-menu-item>Documentation</button>
+      </mat-menu>
+    </div>
+    <span class="example-fill-remaining-space"></span>
+  </mat-toolbar>
+</div>
+

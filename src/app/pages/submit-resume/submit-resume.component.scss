@@ -1,0 +1,25 @@
+.page-content {
+
+  padding: 5%;
+}
+
+mat-form-field {
+  margin-left: 10px;
+}
+
+.ui-sortable div {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.ui-sortable .form-group {
+
+  border: 1px solid #ececec;
+  border-radius: 3px;
+}
+
+@media only screen and (max-width: 600px) {
+  ui-sortable div button {
+    height: 63%;
+    margin: 0;
+  }
+}

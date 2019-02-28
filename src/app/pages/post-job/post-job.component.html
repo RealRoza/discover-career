@@ -1,0 +1,201 @@
+<div class="page-content" fxLayout="row" fxFlex="100">
+  <div class="page-left-sidebar" fxFlex="30" fxLayout="column">
+    <aside class="page-sidebar">
+      <section class="page-header">
+        <div class="inner">
+          <div class="page-title">
+            <h1 class="primary">Post a Job</h1>
+            <p class="secondary">Publish your job and start getting leads.</p>
+          </div>
+        </div>
+      </section>
+    </aside>
+  </div>
+  <mat-divider [vertical]="true"></mat-divider>
+  <div class="form-content" fxFlex="70">
+    <form [formGroup]="f" (ngSubmit)="onSubmit(f)" fxLayout="column">
+      <div formGroupName="job" fxLayout="column">
+        <h3 class="title">Job information</h3>
+        <div fxLayout="row" fxFlex="100" fxLayoutGap="20px">
+          <mat-form-field appearance="outline" fxFlex="50">
+            <mat-label>Job Title</mat-label>
+            <input type="text" matInput formControlName="jobTitle" placeholder="Job Title">
+            <!--<mat-error *ngIf="jobTitle.hasError('required')">-->
+            <!--Job Title is <strong>required.</strong>-->
+            <!--</mat-error>-->
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>Location <small>(optional)</small></mat-label>
+            <input type="text" matInput formControlName="location" placeholder="e.g. London">
+          </mat-form-field>
+        </div>
+        <!--<mat-form-field appearance="outline" fxFlex="100">-->
+          <!--<mat-label>Job Tage <small>(optional)</small></mat-label>-->
+          <!--<input type="text" matInput formControlName="jobTag" placeholder="e.g. PHP, Social Media, Management">-->
+          <!--<mat-hint>Comma seperate tags, such as required skills or technologies, for this job.</mat-hint>-->
+        <!--</mat-form-field>-->
+        <div fxLayout="row" fxFlex="100" fxLayoutGap="20px">
+          <!--dropdown-->
+          <mat-form-field appearance="outline" fxFlex="50">
+            <mat-label>Job Type</mat-label>
+            <mat-select formControlName="jobTypeId" placeholder="Select an Option">
+              <mat-option *ngFor="let type of jobType" [value]="type.jobTypeId">{{ type.title }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex="50">
+            <mat-label>Job Category</mat-label>
+            <mat-select formControlName="jobCategoryDetails" placeholder="Choose a Category" multiple>
+              <mat-option *ngFor="let cat of jobCategory" [value]="cat">{{ cat.title }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <!--description-->
+        <h3 class="title">description</h3>
+        <div style="margin-bottom: 20px;">
+          <p-editor formControlName="description" [style]="{'height':'220px'}"></p-editor>
+        </div>
+        <div fxLayout="row" fxFlex="100" fxLayoutGap="20px">
+          <mat-form-field appearance="outline" fxFlex="50">
+            <mat-label>Application Eamil/URL</mat-label>
+            <input type="text" matInput formControlName="mail" placeholder="Enter an Email address or website URL">
+          </mat-form-field>
+          <!--mat-date-->
+          <mat-form-field appearance="outline" fxFlex="50">
+            <mat-label>Closing Date <small>(optional)</small></mat-label>
+            <input matInput formControlName="closingDate" min="01-01-1990" max="12-31-2020" [matDatepicker]="picker" placeholder="Closing Date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxFlex="100" fxLayoutGap="20px">
+          <mat-form-field appearance="outline" fxFlex="50">
+            <mat-label>Start Date <small>(optional)</small></mat-label>
+            <input matInput formControlName="startDate" min="01-01-1990" max="12-31-2020" [matDatepicker]="picker1" placeholder="Start Date">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex="50">
+            <mat-label>Salary <small>(optional)</small></mat-label>
+            <input type="text" formControlName="salary" matInput placeholder="Salary">
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxFlex="100" fxLayoutGap="20px">
+          <mat-form-field appearance="outline" fxFlex="50">
+            <mat-label>Career Level <small>(optional)</small></mat-label>
+            <mat-select formControlName="careerLevelId" placeholder="Career Level">
+              <mat-option *ngFor="let career of careerLevel" [value]="career.careerLevelId">{{ career.title }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex="50">
+            <mat-label>Experience <small>(optional)</small></mat-label>
+            <mat-select formControlName="experience" placeholder="Experience">
+              <mat-option *ngFor="let exp of experience" [value]="exp">{{ exp }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <mat-form-field appearance="outline" fxFlex="100">
+          <mat-label>Qualification <small>(optional)</small></mat-label>
+          <mat-select formControlName="qualificationId" placeholder="Qualification">
+            <mat-option *ngFor="let qual of qualification" [value]="qual.qualificationId">{{ qual.title }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex="100">
+          <mat-label>Excerpt <small>(optional)</small></mat-label>
+          <textarea matInput formControlName="excerpt" maxlength="256" placeholder="Define a short excerpt which will appear in job listing view." rows="5"></textarea>
+          <!--<mat-hint align="end">{{ excerpt.value.length }}/256</mat-hint>-->
+        </mat-form-field>
+        <mat-checkbox>Visa Sponorship <small>(optional)</small></mat-checkbox>
+        <mat-hint style="margin-top: 10px; margin-bottom: 20px; font-size: 14px;color: #95989a;">Does this position offer visa sponsorship?</mat-hint>
+      </div>
+      <div formGroupName="company" fxLayout="column">
+        <h3 class="title">company information</h3>
+        <div fxLayout="row" fxFlex="100" fxLayoutGap="20px">
+          <mat-form-field appearance="outline" fxFlex="50">
+            <mat-label>Company Name</mat-label>
+            <input type="text" matInput formControlName="companyName" placeholder="Enter the name of the company">
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>Company Slug</mat-label>
+            <input type="text" formControlName="companySlug" matInput placeholder="Company Slug">
+          </mat-form-field>
+        </div>
+        <mat-form-field appearance="outline" fxFlex="100">
+          <mat-label>Tagline <small>(optional)</small></mat-label>
+          <input type="text" matInput formControlName="tagLine" placeholder="Briefly describe your company">
+        </mat-form-field>
+        <div fxLayout="row" fxFlex="100" fxLayoutGap="20px">
+          <mat-form-field appearance="outline" fxFlex="50">
+            <mat-label>Foundation Year <small>(optional)</small></mat-label>
+            <input type="text" matInput formControlName="foundtionYear" placeholder="e.g. 1992">
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>Location <small>(optional)</small></mat-label>
+            <input type="text" matInput formControlName="companyLocation" placeholder="e.g. Paris">
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxFlex="100" fxLayoutGap="20px">
+          <mat-form-field appearance="outline" fxFlex="50">
+            <mat-label>Industry <small>(optional)</small></mat-label>
+            <mat-select formControlName="industryId" placeholder="Industry">
+              <mat-option *ngFor="let indus of industry" [value]="indus.industryId">{{ indus.title }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex="50">
+            <mat-label>Company Size <small>(optional)</small></mat-label>
+            <mat-select formControlName="companySize" placeholder="Company Size">
+              <mat-option *ngFor="let com of companySize" [value]="com">{{ com }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <mat-form-field appearance="outline" fxFlex="100">
+          <mat-label>Company Email <small>(optional)</small></mat-label>
+          <input type="text" matInput formControlName="companyMail" placeholder="Company Email">
+        </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex="100">
+          <mat-label>Description <small>(optional)</small></mat-label>
+          <textarea matInput formControlName="companyDescription" #description maxlength="256" placeholder="Describe your company in a few words." rows="5"></textarea>
+          <mat-hint align="end">{{ description.value.length }}/256</mat-hint>
+        </mat-form-field>
+        <div fxLayout="row" fxFlex="100" fxLayoutGap="20px">
+          <mat-form-field appearance="outline" fxFlex="50">
+            <mat-label>Facebook Username <small>(optional)</small></mat-label>
+            <input type="text" matInput formControlName="facebookUserName" placeholder="Facebook Username">
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>Phone Number <small>(optional)</small></mat-label>
+            <input type="text" matInput formControlName="phoneNumber" placeholder="Phone Number">
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxFlex="100" fxLayoutGap="20px">
+          <mat-form-field appearance="outline" fxFlex="50">
+            <mat-label>Website <small>(optional)</small></mat-label>
+            <input type="text" matInput formControlName="website" placeholder="http://">
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>LinkedIn Username <small>(optional)</small></mat-label>
+            <input type="text" matInput formControlName="linkedInUserName" placeholder="LinkedIn Username">
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxFlex="100" fxLayoutGap="20px">
+          <mat-form-field appearance="outline" fxFlex="50">
+            <mat-label>Video <small>(optional)</small></mat-label>
+            <input type="text" matInput formControlName="video" placeholder="A link to a video about your company">
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>Twitter Username <small>(optional)</small></mat-label>
+            <input type="text" matInput formControlName="twitterUserName" placeholder="@yourcompany">
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxFlex="100">
+        <p-fileUpload #fileInput name="files" accept="image/*"
+                      maxFileSize="1000000" auto="auto">
+        </p-fileUpload>
+      </div>
+      <div style="margin-bottom: 15px"></div>
+      <div fxFlex="100">
+        <button type="submit" mat-raised-button fxFlex="30" color="primary">SUBMIT  </button>
+      </div>
+    </form>
+  </div>
+</div>

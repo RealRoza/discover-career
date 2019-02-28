@@ -1,0 +1,21 @@
+<a class="company_listing" [routerLink]="['/companies', companyItem.companyId]">
+  <mat-card fxLayout="row" fxLayout.lt-sm="column"  fxFlex="100">
+    <mat-card-header fxFlex="50" fxLayout="row" fxLayout.lt-sm="column">
+      <div mat-card-avatar>
+        <img class="company-logo" src="company-logo" [src]="companyItem.photo?.url" alt="company-logo">
+      </div>
+      <div>
+        <mat-card-title>{{ companyItem.companyName }}</mat-card-title>
+        <mat-card-subtitle>{{ companyItem.companyDescription | slice: 0:80 }}</mat-card-subtitle>
+      </div>
+    </mat-card-header>
+    <mat-card-content fxLayout="column"  fxLayoutAlign="none end" fxLayoutAlign.lt-sm="center start" fxFlex="50">
+      <div fxFlex="30">
+        <ul class="company-meta" fxLayout.lt-sm="row">
+          <li class="open-positions" fxFlexAlign="center">{{ companyItem.jobs.length }} POSITION</li>
+          <li class="location" fxFlexAlign="start">{{ companyItem.companyLocation }}</li>
+        </ul>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</a>

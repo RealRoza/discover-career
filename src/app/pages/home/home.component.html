@@ -1,0 +1,27 @@
+<div fxLayout="column" fxLayoutGap="10px">
+  <div class="home-image" fxLayout="row" fxFlex="100" fxLayoutGap="10px">
+    <div fxFlex="50" fxLayout="column" fxLayoutAlign="center center">
+      <h1 class="primary">Discover a new career designed for you.</h1>
+      <h3 class="secondary">Search over 3,875 open position from multiples disciplines of life all over the world.</h3>
+      <button mat-raised-button class="btn btn-success">BROWSE LISTING</button>
+    </div>
+    <div fxFlex="50" fxLayout="column" fxFlexAlign="center center">
+      <div fxFlex="45" class="inner">
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)" fxLayout="column" fxFlex="100" fxFlexAlign="center center">
+          <div class="input-color">
+            <mat-form-field color="secondary" appearance="outline">
+              <mat-label>KEYWORDS</mat-label>
+              <input type="text" matInput ngModel placeholder="Keywords" name="keywords">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>LOCATIONS</mat-label>
+              <input type="text" matInput ngModel placeholder="Locations" name="location">
+            </mat-form-field>
+          </div>
+          <button type="submit" mat-raised-button>SEARCH</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

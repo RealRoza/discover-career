@@ -1,0 +1,86 @@
+<div class="site-body" fxLayout="row" fxFlex="100">
+  <div class="page-content" fxFlex="70">
+    <div class="entry-header" fxLayout="row">
+      <div class="left">
+        <img class="candidate_photo"
+             [src]="photo.url">
+      </div>
+      <div class="right" fxLayout="column">
+        <div class="heading" fxLayout="row" fxLayoutAlign="center center">
+          <h2 class="title">{{ resume.fullName }}</h2>
+
+        </div>
+        <ul class="meta-info">
+          <li class="tagline"><span class="value">{{ resume.professionalTitle }}</span></li>
+          <li class="location"><i class="fas fa-map-marker-alt"></i> <span class="value">{{ resume.location }}</span></li>
+        </ul>
+        <div class="taxonomy-terms">
+          <a href="#" rel="tag" *ngFor="let cat of resume.resumeCategoryDetails">{{ cat.resumeCategory.title }}</a>
+        </div>
+      </div>
+    </div>
+    <div class="entry-description">
+      <h3 class="title">Descriptions</h3>
+      <p>{{ resume.resumeContent }}</p>
+    </div>
+    <div class="resume-education">
+      <div class="section-title">
+        Education
+      </div>
+      <dl class="candidate-education" *ngFor="let education of resume.educations">
+        <dt>
+          <div class="title">
+            <span>{{ education.schoolName }}</span>
+            <small class="date">{{ education.date }}</small>
+          </div>
+          <span class="qualification">{{ education.qualification }}</span>
+        </dt>
+        <dd>
+          <p>{{ education.notes }}</p>
+        </dd>
+      </dl>
+    </div>
+    <div class="resume-education">
+      <div class="section-title">
+        EXPERIENCE
+      </div>
+      <dl class="candidate-education" *ngFor="let experience of resume.experiences">
+        <dt>
+          <div class="title">
+            <span>{{ experience.employer }}</span>
+            <small class="date">{{ experience.date }}</small>
+          </div>
+          <span class="qualification">{{ experience.jobTitle }}</span>
+        </dt>
+        <dd>
+          <p>{{ experience.notes }}</p>
+        </dd>
+      </dl>
+    </div>
+    <div class="entry-actions">
+      <button mat-raised-button color="accent" style="text-transform: uppercase">Contact Now</button>
+    </div>
+  </div>
+
+  <div class="page-sidebar">
+    <a href="https://demo.wpscouts.net/capstone/companies/" class="back-link">← See all companies</a>
+    <div class="profile-module" style="width: 100%;">
+      <div class="candidate-info info">
+        <h4 class="title">Contact Card</h4>
+        <h2 class="company-name name">{{ resume.fullName }}</h2>
+        <p class="candidate-tagline tagline">{{ resume.professionalTitle }}</p>
+      </div>
+      <div class="candidate-meta meta-info">
+        <ul class="resume-links">
+          <li class="resume-link resume-link-twitter">
+            <a rel="nofollow" href="http://twitter.com"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li class="resume-link resume-link-wpscouts">
+            <a rel="nofollow" href="https://wpscouts.net"><i class="fas fa-globe-americas"></i></a>
+          </li>
+        </ul>
+        <button mat-raised-button color="accent" style="text-transform: uppercase">Contact Now</button>
+      </div>
+    </div>
+  </div>
+</div>

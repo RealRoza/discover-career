@@ -1,0 +1,248 @@
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: 300ms ease-in all;
+}
+.page-content {
+  padding-top: 3%;
+  padding-left: 5%;
+  padding-right: 1%;
+}
+
+.entry-header {
+  margin-bottom: 40px;
+}
+
+.entry-header .left {
+  margin-right: 30px;
+}
+
+.entry-header .left .candidate_photo {
+
+  width: 120px;
+  height: auto;
+  border-radius: 5px;;
+}
+
+.heading .title {
+  font-family: "Roboto", sans-serif;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1;
+  margin: 0 0 10px 0;
+}
+
+.heading .positions {
+  align-self: center;
+  margin-left: 20px;
+  font-size: 14px;
+  border-radius: 3px;
+  padding: 1px 7px;
+  color: #FFF;
+  background: #1d1d1d !important;
+}
+
+.entry-header .right ul.meta-info {
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.entry-header .right ul.meta-info .location {
+  margin-right: 15px;
+  font-weight: 400;
+  color: #adadad;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.entry-header .right ul.meta-info li {
+  margin-right: 15px;
+  font-weight: 400;
+  color: #adadad;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.entry-header .right ul.meta-info li i{
+  margin-right: 5px;
+}
+
+.entry-header .right .taxonomy-terms {
+  margin-top: 10px;
+}
+
+.entry-header .right .taxonomy-terms a {
+  display: inline-block;
+  background: #f7f7f7;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  margin-right: 10px;
+  margin-bottom: 8px;
+  border-radius: 3px;
+  letter-spacing: .3px
+}
+
+.entry-description {
+  width: 100%;
+  position: relative;
+  padding: 0;
+  margin-bottom: 45px;
+}
+
+.entry-description h3:not(.section-title) {
+  display: block;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 40px 0 20px 0;
+  text-transform: uppercase;
+  color: #95989a;
+  letter-spacing: .4px;
+}
+
+.entry-description p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.resume-education .section-title {
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #95989a;
+  margin: 0 0 30px 0;
+}
+
+.resume-education dl.candidate-education {
+  position: relative;
+  list-style: disc;
+  margin: 0 0 60px 0;
+  padding: 0;
+}
+
+.resume-education dl.candidate-education:before {
+  position: absolute;
+  content: '';
+  width: 1px;
+  height: 100%;
+  border-left: 1px solid #dbdbdb;
+  border-radius: 100%;
+  left: 12px;
+  top: 0;
+}
+
+.resume-education dl.candidate-education dt {
+  position: relative;
+  margin-bottom: 20px;
+  padding-left: 50px;
+}
+
+.resume-education dl.candidate-education dt:before {
+  position: absolute;
+  content: '';
+  width: 25px;
+  height: 25px;
+  border: 1px solid #dbdbdb;
+  background: #FFF;
+  border-radius: 100%;
+  left: 0;
+  top: 15px
+}
+
+.resume-education dl.candidate-education dt .title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.resume-education dl.candidate-education dt .title span {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.resume-education dl.candidate-education dt .title .date {
+  background: #ffe3bf;
+  color: #ff5d20;
+  border-radius: 3px;
+  padding: 2px 5px;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.resume-education dl.candidate-education dt .qualification {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15.5px;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: #959595;
+}
+
+.resume-education dl.candidate-education dd {
+  margin-bottom: 45px;
+  padding: 0px 100px 0px 10px;
+}
+.page-sidebar{
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.page-sidebar .back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #373737;
+  transform: translateY(-12px);
+}
+.page-sidebar .profile-module {
+
+  background: #f7f7f7;
+  border-radius: 5px;
+  padding: 30px 43px 40px 43px;
+  margin-bottom: 60px;
+}
+.page-sidebar .profile-module .info .title{
+  font-family: "Open Sans",sans-serif;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #95989a;
+  margin: 0;
+}
+.page-sidebar .profile-module .info .name{
+  font-family: "Roboto",sans-serif;
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 10px 0;
+}
+.page-sidebar .profile-module .info .tagline{
+  font-family: "Roboto",sans-serif;
+  font-size: 23px;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0;
+}
+.profile-module .meta-info ul.resume-links{
+  align-items: center;
+  margin: 20px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+.profile-module .meta-info ul.resume-links li{
+  position: relative;
+  display: inline-block;
+  margin-right: 8px;
+}

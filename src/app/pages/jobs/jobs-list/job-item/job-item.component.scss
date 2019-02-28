@@ -1,0 +1,115 @@
+.header-image {
+  //background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  //background-size: cover;
+  margin-right: 20px;
+}
+a.item-link {
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+a mat-card:hover {
+  background-color: #f0f0f0;
+}
+.location {
+  width: 21%;
+  font-size: 16px;
+  color: #adadad;
+}
+.job-logo {
+  background-size: cover;
+  width: 65px!important;
+  height: 65px!important;
+  border-radius: 2px;
+  margin-right: 1em;
+}
+.job-type {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #5bbc2e;
+}
+.date {
+  font-size: 16px;
+  letter-spacing: -.3px;
+  line-height: 1.9;
+  color: #adadad;
+}
+.page-left-sidebar {
+  padding-top: 3%;
+  padding-bottom: 3%;
+  padding-left: 5%;
+  //background-image: url("https://demo.wpscouts.net/capstone/wp-content/themes/capstone/images/site-top-left-bg.png");
+}
+.job-list {
+  padding: 3% 5%;
+}
+.page-left-sidebar button {
+  background-color: #59bd59;
+  color: aliceblue;
+}
+.page-left-sidebar .primary {
+  font-family: "Roboto",sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -.5px;
+  margin: 0 0 10px 0;
+}
+.page-left-sidebar #jobs-filters-module {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+#jobs-filters-module .job_filter {
+  margin-bottom: 45px;
+  padding-bottom: 45px;
+  border-bottom: 1px solid #e1e1e1;
+}
+#jobs-filters-module .job_filter .title {
+  font-family: "Open Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #95989a;
+  letter-spacing: 1px;
+  margin-top: 45px;
+}
+.job_filter.jobs_types_filter ul.job_types {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#jobs-filters-module .job_filter.jobs_types_filter ul.job_types li {
+  font-size: 16px;
+}
+.job_filter.jobs_types_filter ul.job_types li label {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  text-transform: capitalize;
+  cursor: pointer;
+  margin-bottom: 12px;
+  letter-spacing: 0!important;
+}
+
+[type="checkbox"], [type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+#jobs-filters-module .job_filter.job_tags_filter .job_tags a {
+  display: inline-block;
+  background: #f5f5f5;
+  border-radius: 3px;
+  padding: 6px 16px;
+  margin: 0 8px 12px 0;
+  font-size: 15.4px!important;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: 300ms ease-in all;
+}
+

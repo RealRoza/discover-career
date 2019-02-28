@@ -1,0 +1,80 @@
+<div fxLayout="row" class="site-body" fxFlex="100" dir="rtl">
+  <div class="page-sidebar"  fxFlex="30" dir="ltr">
+    <a href="#" class="back-link">← See all companies</a>
+    <div class="profile-module">
+      <div class="company-info info">
+        <h4 class="title">Social Profile</h4>
+        <h2 class="company-name name">{{ companyDetail.companyName }}</h2>
+        <p class="company-tagline tagline">{{ companyDetail.tagLine }}</p>
+      </div>
+      <div class="company-meta meta-info">
+        <ul class="social-links">
+          <li class="twitter"><a href="https://twitter.com" rel="_blank"><i class="fab fa-facebook"></i></a></li>
+          <li class="linkedin"><a href="https://linkedin.com" rel="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+          <li class="website"><a href="https://www.twitter.com" rel="_blank"><i class="fas fa-globe-americas"></i></a></li>
+
+        </ul>
+        <button mat-raised-button color="accent">Watch Video</button>
+      </div>
+    </div>
+  </div>
+  <div class="page-content company" fxFlex="70" dir="ltr">
+    <div class="entry-header" fxLayout="row" >
+      <div class="left">
+        <img class="company_logo" style="width: 120px;
+  height: auto;
+  border-radius: 5px;" [src]="photo.url" >
+      </div>
+      <div class="right" fxLayout="column">
+        <div class="heading" fxLayout="row" fxLayoutAlign="center center">
+          <h2 class="title">{{ companyDetail.companyName }}</h2>
+          <span class="positions">{{ companyDetail.jobSize }} Open Position</span>
+        </div>
+        <!--<ul class="meta-info">-->
+          <!--<li class="location"><span class="value">{{ companyDetail.companyLocation }}</span></li>-->
+        <!--</ul>-->
+        <div class="taxonomy-terms">
+          <span>{{ industry.title }}</span>
+        </div>
+      </div>
+    </div>
+    <mat-card class="entry-meta">
+      <h4 class="section-title">Overview</h4>
+      <ul class="meta-fields">
+        <li class="jmfe-custom-field-wrap "><img
+          src="https://demo.wpscouts.net/capstone/wp-content/uploads/sites/4/2019/02/smartphone.svg"
+          class="icon"><strong class="jmfe-custom-field-label"
+                               data-icon="https://demo.wpscouts.net/capstone/wp-content/uploads/sites/4/2019/02/smartphone.svg">Phone
+          Number:</strong> {{ companyDetail.phoneNumber }}
+        </li>
+      </ul>
+    </mat-card>
+    <div class="entry-description">
+      <h3 class="title">About Company</h3>
+      <p>{{ companyDetail.companyDescription }}</p>
+    </div>
+    <div class="company-positions">
+      <h3 class="title">Open Positions</h3>
+      <ul>
+        <li *ngFor="let job of companyDetail.jobs">
+          <div class="entry-header" fxLayout="row" >
+            <a class="title" [routerLink]="['/jobs', job.jobId]">
+              <h5>{{ job.jobTitle }}</h5>
+            </a>
+            <span class="types">
+              (<a [routerLink]="['/jobs', job.jobId]" rel="tag" *ngFor="let type of jobs">{{ type.jobType.title }}</a>)
+            </span></div>
+          <div class="entry-footer">
+            <span class="location">{{ companyDetail.companyLocation }}</span>
+            <span class="categories">
+              <a href="" rel="tag"></a>
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="entry-actions">
+      <button mat-raised-button color="accent" >Contact Company</button>
+    </div>
+  </div>
+</div>

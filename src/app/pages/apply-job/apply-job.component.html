@@ -1,0 +1,19 @@
+<div fxLayout="column">
+  <h2 mat-dialog-title>Apply Job</h2>
+  <mat-dialog-content>
+    <form fxLayout="column">
+      <mat-form-field appearance="outline">
+        <mat-label>Email Address</mat-label>
+        <input type="text" matInput placeholder="Email Address">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Message</mat-label>
+        <textarea matInput rows="10" placeholder="Your cover letter/message sent to the employer."></textarea>
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close color="warn">Cancel</button>
+    <button mat-raised-button [mat-dialog-close]="true" color="accent">SEND APPLICATION</button>
+  </mat-dialog-actions>
+</div>

@@ -1,0 +1,24 @@
+<a style="text-decoration: none" class="company_listing" [routerLink]="['/resumes', resumeItem.resumeId]">
+  <mat-card fxLayout="row" fxLayout.lt-sm="column" fxFlex="100">
+    <mat-card-header fxFlex="40" fxLayout="row" fxLayout.lt-sm="column">
+      <img class="candidate_photo"
+           [src]="resumeItem.photo.url">
+      <div>
+        <mat-card-title class="candidate-column">{{ resumeItem.fullName }}</mat-card-title>
+        <mat-card-subtitle>{{ resumeItem.professionalTitle }}</mat-card-subtitle>
+      </div>
+    </mat-card-header>
+    <div class="candidate-location-column" fxFlex="30">
+      <span class="candidate-location"><i class="fas fa-map-marker-alt"></i>{{ resumeItem.location }}</span>
+    </div>
+    <mat-card-content fxLayout="column" fxLayoutAlign="none end" fxLayoutAlign.lt-sm="center start" fxFlex="30"
+                      class="resume-posted-column resume-meta">
+      <div fxFlex="30">
+        <div class="resume-category">
+          {{ resumeItem.resumeCategoryDetails[0].resumeCategory.title }}
+        </div>
+        <!--<div class="date">6 months ago</div>-->
+      </div>
+    </mat-card-content>
+  </mat-card>
+</a>

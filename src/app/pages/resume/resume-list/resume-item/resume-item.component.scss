@@ -1,0 +1,32 @@
+.candidate_photo{
+  float: none;
+  position: static;
+  width: 66px!important;
+  height: 66px!important;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px #ededed;
+  margin-right: 1em;
+  vertical-align: middle;
+}
+.candidate-location-column{
+  font-size: 16px;
+  color: #adadad;
+  white-space: nowrap;
+}
+.candidate-location-column i{
+  margin-right: 5px;
+}
+.resume-category{
+  color: #90da36;
+  idth: 100%;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+.resume-posted-column .date{
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: -.3px;
+}
